@@ -12,7 +12,7 @@ const CUSTOM_COMMANDS_INFO = [
     'description' => LANG_CUSTOM_COMMANDS[0],
     'version' => CUSTOM_COMMANDS_VERSION,
     'author' => 'DeathScore13',
-    'url' => '*link*'
+    'url' => 'https://github.com/deathscore13/custom_commands'
 ];
 
 if (Config::load('custom_commands') && ($CFG_CUSTOM_COMMANDS = Config::parseByPeerId($vk->obj['peer_id'], $CFG_CUSTOM_COMMANDS)))
