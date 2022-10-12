@@ -12,9 +12,11 @@ const CUSTOM_COMMANDS_INFO = [
     'description' => LANG_CUSTOM_COMMANDS[0],
     'version' => CUSTOM_COMMANDS_VERSION,
     'author' => 'DeathScore13',
-    'url' => 'https://github.com/deathscore13/custom_commands'
+    'url' => '*link*'
 ];
 
-if ($cfg_custom_commands = Config::parseByPeerId($vk->obj['peer_id'], Config::load('custom_commands')))
-    foreach ($cfg_custom_commands as $cmd => $params)
+if (Config::load('custom_commands') && ($CFG_CUSTOM_COMMANDS = Config::parseByPeerId($vk->obj['peer_id'], $CFG_CUSTOM_COMMANDS)))
+{
+    foreach ($CFG_CUSTOM_COMMANDS as $cmd => $params)
         $m->regCmd(explode(',', $cmd), $params['description'] ?? '');
+}
